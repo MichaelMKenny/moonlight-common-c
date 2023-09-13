@@ -219,6 +219,8 @@ int LiStartConnection(PSERVER_INFORMATION serverInfo, PSTREAM_CONFIGURATION stre
         goto Cleanup;
     }
 
+    stage = STAGE_NONE;
+
     // Replace missing callbacks with placeholders
     fixupMissingCallbacks(&drCallbacks, &arCallbacks, &clCallbacks);
     memcpy(&VideoCallbacks, drCallbacks, sizeof(VideoCallbacks));
